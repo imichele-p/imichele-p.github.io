@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>樱花樱花动漫专注动漫的门户网站-在线动漫番剧观看_新番更新与追番推荐</title>
+<meta name="description" content="樱花樱花动漫专注动漫的门户网站，提供动漫番剧在线观看入口、新番更新速览、题材分类导航与追番推荐，帮助动漫爱好者快速找到想看的作品，了解当季新番与经典佳作。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23fdf1f4'/%3E%3Cg fill='%23e8628c'%3E%3Cellipse cx='32' cy='16' rx='7' ry='10'/%3E%3Cellipse cx='32' cy='48' rx='7' ry='10'/%3E%3Cellipse cx='16' cy='32' rx='10' ry='7'/%3E%3Cellipse cx='48' cy='32' rx='10' ry='7'/%3E%3Cellipse cx='20' cy='20' rx='7' ry='6' transform='rotate(-45 20 20)'/%3E%3Cellipse cx='44' cy='20' rx='7' ry='6' transform='rotate(45 44 20)'/%3E%3Cellipse cx='20' cy='44' rx='7' ry='6' transform='rotate(45 20 44)'/%3E%3Cellipse cx='44' cy='44' rx='7' ry='6' transform='rotate(-45 44 44)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='6' fill='%23fff7d6'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --pink:#e8628c;
+    --pink-soft:#fdf1f4;
+    --pink-line:#f6d3de;
+    --ink:#2c2733;
+    --ink-2:#5d5666;
+    --paper:#fffdfc;
+    --gold:#f2b544;
+    --mint:#5fb6a4;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* 页头 */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,253,252,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--pink-line);
+  }
+  .bar{display:flex;align-items:center;gap:20px;padding:12px 0;flex-wrap:wrap;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.2px;color:var(--ink);}
+  .logo .mark{width:38px;height:38px;flex:none;}
+  .logo .brand{line-height:1.35;}
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    padding:7px 13px;border-radius:999px;font-size:14px;color:var(--ink-2);
+    transition:background .18s,color .18s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:var(--pink-soft);color:var(--pink);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 20px;border-radius:999px;font-weight:700;font-size:15px;
+    background:var(--pink);color:#fff;border:none;cursor:pointer;
+    transition:transform .18s,box-shadow .18s,background .18s;
+  }
+  .btn:hover{background:#d9507a;transform:translateY(-1px);box-shadow:0 8px 20px rgba(232,98,140,.28);}
+  .btn.ghost{background:#fff;color:var(--pink);border:1.5px solid var(--pink);}
+  .btn.ghost:hover{background:var(--pink-soft);box-shadow:none;}
+  .btn[aria-disabled="true"]{opacity:.75;cursor:default;pointer-events:none;}
+
+  /* 首屏 */
+  .hero{
+    background:
+      radial-gradient(circle at 12% 18%,rgba(232,98,140,.14),transparent 52%),
+      radial-gradient(circle at 88% 8%,rgba(95,182,164,.12),transparent 46%),
+      var(--pink-soft);
+    border-bottom:1px solid var(--pink-line);
+    overflow:hidden;
+  }
+  .hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:52px 0 56px;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;
+    color:var(--pink);background:#fff;border:1px solid var(--pink-line);
+    padding:5px 14px;border-radius:999px;margin-bottom:16px;
+  }
+  h1{
+    font-size:clamp(24px,3.4vw,38px);line-height:1.32;letter-spacing:.4px;
+    margin:0 0 16px;font-weight:900;color:var(--ink);
+  }
+  h1 .hl{color:var(--pink);}
+  .hero p.lead{margin:0 0 24px;color:var(--ink-2);font-size:16px;max-width:34em;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .hero-note{font-size:13px;color:var(--ink-2);margin-top:14px;}
+  .hero-art{position:relative;}
+  .hero-art svg{width:100%;height:auto;filter:drop-shadow(0 16px 30px rgba(232,98,140,.16));}
+  .stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;}
+  .stats div{font-size:13px;color:var(--ink-2);}
+  .stats strong{display:block;font-size:22px;color:var(--pink);line-height:1.2;}
+
+  /* 通用区块 */
+  section{padding:52px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap;}
+  .sec-head h2{font-size:clamp(20px,2.4vw,26px);margin:0;font-weight:800;letter-spacing:.3px;}
+  .sec-head h2 em{font-style:normal;color:var(--pink);}
+  .sec-head p{margin:6px 0 0;color:var(--ink-2);font-size:14px;max-width:46em;}
+  .more{font-size:14px;color:var(--pink);font-weight:700;white-space:nowrap;}
+  .more:hover{text-decoration:underline;}
+
+  /* 新番速览卡片 */
+  .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{
+    background:#fff;border:1px solid var(--pink-line);border-radius:var(--radius);
+    padding:22px;transition:transform .2s,box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(232,98,140,.12);}
+  .card .tag{
+    display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;
+    background:var(--pink-soft);color:var(--pink);margin-bottom:12px;
+  }
+  .card .tag.mint{background:#e9f5f2;color:#3d8f7d;}
+  .card .tag.gold{background:#fdf3dd;color:#b07d13;}
+  .card h3{margin:0 0 8px;font-size:17px;font-weight:800;}
+  .card p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.7;}
+  .card .meta{margin-top:14px;font-size:13px;color:#8b8494;display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* 分类导航 */
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .cat{
+    display:flex;align-items:center;gap:12px;
+    background:#fff;border:1px solid var(--pink-line);border-radius:12px;
+    padding:14px 16px;font-size:14px;font-weight:700;color:var(--ink);
+    transition:background .18s,border-color .18s;
+  }
+  .cat:hover{background:var(--pink-soft);border-color:var(--pink);}
+  .cat .dot{width:10px;height:10px;border-radius:50%;flex:none;background:var(--pink);}
+  .cat .dot.m{background:var(--mint);}
+  .cat .dot.g{background:var(--gold);}
+  .cat .dot.b{background:#7d9bd8;}
+  .cat small{display:block;font-weight:400;font-size:12px;color:var(--ink-2);}
+
+  /* 追番推荐 - 带筛选 */
+  .rec{background:#fff;border:1px solid var(--pink-line);border-radius:var(--radius);padding:26px;}
+  .filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+  .chip{
+    font-size:13px;font-weight:700;padding:6px 15px;border-radius:999px;
+    border:1px solid var(--pink-line);background:#fff;color:var(--ink-2);cursor:pointer;
+    transition:all .18s;
+  }
+  .chip:hover{border-color:var(--pink);color:var(--pink);}
+  .chip[aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#fff;}
+  .rec-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .rec-item{
+    display:flex;gap:14px;padding:14px;border-radius:12px;background:var(--pink-soft);
+    border:1px solid transparent;transition:border-color .18s;
+  }
+  .rec-item:hover{border-color:var(--pink-line);}
+  .rec-item .ph{
+    width:56px;height:56px;flex:none;border-radius:12px;background:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .rec-item h4{margin:0 0 4px;font-size:15px;font-weight:800;}
+  .rec-item p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6;}
+  .rec-item .kind{font-size:12px;color:var(--pink);font-weight:700;}
+  .no-result{display:none;font-size:14px;color:var(--ink-2);padding:18px 0;}
+
+  /* 观看指南 */
+  .guide{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .step{background:#fff;border:1px solid var(--pink-line);border-radius:var(--radius);padding:24px;}
+  .step .num{
+    width:38px;height:38px;border-radius:50%;background:var(--pink);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin-bottom:14px;
+  }
+  .step h3{margin:0 0 8px;font-size:16px;font-weight:800;}
+  .step p{margin:0;font-size:14px;color:var(--ink-2);}
+
+  /* 简介 + 数据 */
+  .about{display:grid;grid-template-columns:1.4fr .6fr;gap:32px;align-items:start;}
+  .about h2{font-size:clamp(20px,2.4vw,26px);margin:0 0 14px;font-weight:800;}
+  .about p{font-size:15px;color:var(--ink-2);margin:0 0 14px;}
+  .about .links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;}
+  .about .links a{color:var(--pink);font-weight:700;}
+  .about .links a:hover{text-decoration:underline;}
+  .facts{background:var(--pink-soft);border:1px solid var(--pink-line);border-radius:var(--radius);padding:22px;}
+  .facts h3{margin:0 0 12px;font-size:15px;font-weight:800;}
+  .facts ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink-2);}
+  .facts li{margin-bottom:8px;}
+
+  /* 页尾 */
+  footer.site{background:#2c2733;color:#cfc9d6;padding:40px 0 28px;margin-top:12px;}
+  footer .f-in{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;}
+  footer .f-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;font-size:15px;margin-bottom:12px;}
+  footer p{font-size:13px;line-height:1.8;margin:0;color:#a9a2b4;}
+  footer nav{display:flex;flex-direction:column;gap:8px;font-size:13px;}
+  footer nav a:hover{color:var(--pink);}
+  .copy{margin-top:26px;padding-top:18px;border-top:1px solid #423c4c;font-size:12px;color:#8b8494;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+
+  /* 响应式 */
+  @media (max-width:900px){
+    .hero-in{grid-template-columns:1fr;padding:36px 0 40px;}
+    .hero-art{order:-1;max-width:340px;}
+    .grid-cards{grid-template-columns:repeat(2,1fr);}
+    .cats{grid-template-columns:repeat(2,1fr);}
+    .guide{grid-template-columns:1fr;}
+    .about{grid-template-columns:1fr;}
+    footer .f-in{grid-template-columns:1fr;}
+  }
+  @media (max-width:620px){
+    body{font-size:15px;}
+    nav.main{width:100%;margin-left:0;order:3;}
+    nav.main a{padding:6px 10px;font-size:13px;}
+    .grid-cards{grid-template-columns:1fr;}
+    .rec-list{grid-template-columns:1fr;}
+    .rec{padding:18px;}
+    .stats{gap:18px;}
+    .sec-head h2{font-size:20px;}
+    section{padding:38px 0;}
+    .bar{gap:12px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="樱花樱花动漫专注动漫的门户网站首页">
+      <svg class="mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#fdf1f4"/>
+        <g fill="#e8628c">
+          <ellipse cx="32" cy="16" rx="7" ry="10"/>
+          <ellipse cx="32" cy="48" rx="7" ry="10"/>
+          <ellipse cx="16" cy="32" rx="10" ry="7"/>
+          <ellipse cx="48" cy="32" rx="10" ry="7"/>
+          <ellipse cx="20" cy="20" rx="7" ry="6" transform="rotate(-45 20 20)"/>
+          <ellipse cx="44" cy="20" rx="7" ry="6" transform="rotate(45 44 20)"/>
+          <ellipse cx="20" cy="44" rx="7" ry="6" transform="rotate(45 20 44)"/>
+          <ellipse cx="44" cy="44" rx="7" ry="6" transform="rotate(-45 44 44)"/>
+        </g>
+        <circle cx="32" cy="32" r="6" fill="#fff7d6"/>
+      </svg>
+      <span class="brand">樱花樱花动漫专注动漫的门户网站</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#new">新番速览</a>
+      <a href="#cats">题材分类</a>
+      <a href="#rec">追番推荐</a>
+      <a href="#guide">观看指南</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker">动漫爱好者的一站式入口</span>
+        <h1>樱花樱花动漫专注动漫的门户网站</h1>
+        <p class="lead">这里把当季新番、题材分类与追番推荐整理在同一条浏览路径上：先看更新动向，再按题材筛选，最后确定这一季要追哪几部。樱花樱花动漫专注动漫的门户网站希望让找番这件事少绕弯路。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#new">查看新番速览
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn ghost" href="#rec">按题材找番</a>
+        </div>
+        <div class="stats">
+          <div><strong>4</strong>大题材分类入口</div>
+          <div><strong>3</strong>步完成找番</div>
+          <div><strong>持续</strong>跟踪新番动向</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 340" role="presentation">
+          <rect x="24" y="30" width="372" height="240" rx="18" fill="#ffffff" stroke="#f6d3de" stroke-width="2"/>
+          <rect x="24" y="30" width="372" height="42" rx="18" fill="#fdf1f4"/>
+          <circle cx="50" cy="51" r="5" fill="#e8628c"/>
+          <circle cx="68" cy="51" r="5" fill="#f2b544"/>
+          <circle cx="86" cy="51" r="5" fill="#5fb6a4"/>
+          <rect x="52" y="94" width="150" height="12" rx="6" fill="#f6d3de"/>
+          <rect x="52" y="118" width="220" height="8" rx="4" fill="#f9e3ea"/>
+          <rect x="52" y="136" width="180" height="8" rx="4" fill="#f9e3ea"/>
+          <g>
+            <rect x="52" y="164" width="100" height="76" rx="10" fill="#fdf1f4" stroke="#f6d3de"/>
+            <rect x="164" y="164" width="100" height="76" rx="10" fill="#e9f5f2" stroke="#cfe8e2"/>
+            <rect x="276" y="164" width="100" height="76" rx="10" fill="#fdf3dd" stroke="#f3e2bb"/>
+          </g>
+          <g fill="#e8628c" transform="translate(300,240) scale(.55)">
+            <ellipse cx="32" cy="16" rx="7" ry="10"/>
+            <ellipse cx="32" cy="48" rx="7" ry="10"/>
+            <ellipse cx="16" cy="32" rx="10" ry="7"/>
+            <ellipse cx="48" cy="32" rx="10" ry="7"/>
+            <ellipse cx="20" cy="20" rx="7" ry="6" transform="rotate(-45 20 20)"/>
+            <ellipse cx="44" cy="20" rx="7" ry="6" transform="rotate(45 44 20)"/>
+            <ellipse cx="20" cy="44" rx="7" ry="6" transform="rotate(45 20 44)"/>
+            <ellipse cx="44" cy="44" rx="7" ry="6" transform="rotate(-45 44 44)"/>
+            <circle cx="32" cy="32" r="6" fill="#fff7d6"/>
+          </g>
+          <rect x="24" y="252" width="372" height="26" rx="13" fill="#e8628c" opacity=".08"/>
+          <circle cx="70" cy="300" r="18" fill="#fdf1f4" stroke="#f6d3de" stroke-width="2"/>
+          <circle cx="340" cy="296" r="12" fill="#fdf3dd" stroke="#f3e2bb" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 新番速览 -->
+  <section id="new">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>新番速览：<em>先看这一季在播什么</em></h2>
+          <p>新番信息以更新动向为主，标题与题材用于快速判断是否对味。樱花樱花动漫专注动漫的门户网站把当季常见类型整理在一起，方便比对。</p>
+        </div>
+        <a class="more" href="#cats">按题材继续筛 →</a>
+      </div>
+      <div class="grid-cards">
+        <article class="card">
+          <span class="tag">当季新番</span>
+          <h3>热血与冒险线</h3>
+          <p>少年成长、伙伴集结与阶段性目标推进，是这一类型最稳定的看点。适合想跟着主线节奏一路追下去的观众。</p>
+          <div class="meta"><span>连载中</span><span>更新节奏：每周</span></div>
+        </article>
+        <article class="card">
+          <span class="tag mint">日常与治愈</span>
+          <h3>轻缓叙事的日常番</h3>
+          <p>以生活片段与人物关系为核心，情节压力小，适合碎片时间观看。多为一集一个完整小故事的结构。</p>
+          <div class="meta"><span>连载中</span><span>单集篇幅较短</span></div>
+        </article>
+        <article class="card">
+          <span class="tag gold">经典补番</span>
+          <h3>已完结的口碑作品</h3>
+          <p>完整季番适合一次补完，不必等待更新。补番前先确认集数与剧场版的观看顺序，体验会更连贯。</p>
+          <div class="meta"><span>已完结</span><span>适合连续观看</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 题材分类 -->
+  <section id="cats" style="background:var(--pink-soft);border-top:1px solid var(--pink-line);border-bottom:1px solid var(--pink-line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>题材分类：<em>用类型缩小选择范围</em></h2>
+          <p>先定题材再看具体作品，比漫无目的地翻列表更快。樱花樱花动漫专注动漫的门户网站常用的分类维度大致如下。</p>
+        </div>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#rec"><span class="dot"></span><span>热血冒险<small>目标驱动、节奏偏快</small></span></a>
+        <a class="cat" href="#rec"><span class="dot m"></span><span>日常治愈<small>生活流、情绪舒缓</small></span></a>
+        <a class="cat" href="#rec"><span class="dot g"></span><span>校园青春<small>成长与关系描写</small></span></a>
+        <a class="cat" href="#rec"><span class="dot b"></span><span>科幻幻想<small>世界观设定为先</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 追番推荐 + 筛选 -->
+  <section id="rec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>追番推荐：<em>按题材挑选候选作品</em></h2>
+          <p>点击标签筛选下方候选条目，结果会即时更新，方便对比不同题材的观看方向。</p>
+        </div>
+      </div>
+      <div class="rec">
+        <div class="filter" role="group" aria-label="按题材筛选追番推荐">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button class="chip" type="button" data-filter="hot" aria-pressed="false">热血冒险</button>
+          <button class="chip" type="button" data-filter="daily" aria-pressed="false">日常治愈</button>
+          <button class="chip" type="button" data-filter="school" aria-pressed="false">校园青春</button>
+          <button class="chip" type="button" data-filter="scifi" aria-pressed="false">科幻幻想</button>
+        </div>
+        <div class="rec-list" id="recList">
+          <div class="rec-item" data-kind="hot">
+            <div class="ph">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" fill="#e8628c"/></svg>
+            </div>
+            <div>
+              <span class="kind">热血冒险</span>
+              <h4>主线推进型季番</h4>
+              <p>以阶段性目标串联剧情，适合喜欢跟着主角一路成长的观众。</p>
+            </div>
+          </div>
+          <div class="rec-item" data-kind="daily">
+            <div class="ph">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#5fb6a4" stroke-width="2"/><path d="M12 8v5l3 2" stroke="#5fb6a4" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <span class="kind">日常治愈</span>
+              <h4>生活流单元剧</h4>
+              <p>一集一个小故事，随时可以暂停补看，压力小、观感轻松。</p>
+            </div>
+          </div>
+          <div class="rec-item" data-kind="school">
+            <div class="ph">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5-9-5Z" stroke="#f2b544" stroke-width="2" stroke-linejoin="round"/><path d="M7 12v4c0 1.5 2.2 3 5 3s5-1.5 5-3v-4" stroke="#f2b544" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <span class="kind">校园青春</span>
+              <h4>成长与关系描写</h4>
+              <p>侧重人物心理与关系变化，适合喜欢细腻叙事的观众。</p>
+            </div>
+          </div>
+          <div class="rec-item" data-kind="scifi">
+            <div class="ph">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="#7d9bd8" stroke-width="2"/><ellipse cx="12" cy="12" rx="9" ry="4" stroke="#7d9bd8" stroke-width="1.6" transform="rotate(-24 12 12)"/></svg>
+            </div>
+            <div>
+              <span class="kind">科幻幻想</span>
+              <h4>世界观设定优先</h4>
+              <p>前几集需要适应设定，进入状态后信息密度与反转是主要看点。</p>
+            </div>
+          </div>
+        </div>
+        <p class="no-result" id="noResult">当前题材下暂无候选条目，可切换其他标签查看。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看指南 -->
+  <section id="guide" style="background:var(--pink-soft);border-top:1px solid var(--pink-line);border-bottom:1px solid var(--pink-line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>观看指南：<em>三步完成一次找番</em></h2>
+          <p>把选择拆成固定流程，能减少在列表里反复翻找的时间。</p>
+        </div>
+      </div>
+      <div class="guide">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>先确认更新时间</h3>
+          <p>查看新番速览中的连载状态与更新节奏，优先安排正在更新的作品，避免追到一半才发现需要等待。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>再按题材缩小范围</h3>
+          <p>从热血、日常、校园、科幻四类中选定方向，用筛选功能只保留符合口味的分区，减少无关选项。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>最后看单集节奏</h3>
+          <p>日常番多为单元结构可随时补看，主线番建议连续观看。樱花樱花动漫专注动漫的门户网站建议先试看首集再决定是否追完。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于本站 -->
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>关于樱花樱花动漫专注动漫的门户网站</h2>
+        <p>这是一个以动漫内容整理为主线的门户首页：把当季新番动向、题材分类入口与追番候选集中呈现，帮助访问者用较少步骤确定观看目标。页面不提供具体作品的版权资源，实际观看请前往正规平台。</p>
+        <p>站内分类与筛选逻辑围绕常见的题材维度设计，适合刚接触新番、想建立追番节奏的观众，也适合补番时快速回忆类型偏好。樱花樱花动漫专注动漫的门户网站会持续围绕新番与分类两条主线完善内容组织。</p>
+        <div class="links">
+          <a href="#new">回到新番速览</a>
+          <a href="#rec">重新筛选推荐</a>
+          <a href="#guide">查看观看指南</a>
+        </div>
+      </div>
+      <aside class="facts">
+        <h3>使用要点</h3>
+        <ul>
+          <li>新番状态以页面标注的连载情况为准。</li>
+          <li>筛选结果即时更新，无需刷新页面。</li>
+          <li>观看顺序建议先主线后剧场版。</li>
+          <li>页面内容为整理与导航，不承载播放服务。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-in">
+      <div>
+        <div class="f-brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#423c4c"/>
+            <g fill="#e8628c">
+              <ellipse cx="32" cy="16" rx="7" ry="10"/>
+              <ellipse cx="32" cy="48" rx="7" ry="10"/>
+              <ellipse cx="16" cy="32" rx="10" ry="7"/>
+              <ellipse cx="48" cy="32" rx="10" ry="7"/>
+              <ellipse cx="20" cy="20" rx="7" ry="6" transform="rotate(-45 20 20)"/>
+              <ellipse cx="44" cy="20" rx="7" ry="6" transform="rotate(45 44 20)"/>
+              <ellipse cx="20" cy="44" rx="7" ry="6" transform="rotate(45 20 44)"/>
+              <ellipse cx="44" cy="44" rx="7" ry="6" transform="rotate(-45 44 44)"/>
+            </g>
+            <circle cx="32" cy="32" r="6" fill="#fff7d6"/>
+          </svg>
+          樱花樱花动漫专注动漫的门户网站
+        </div>
+        <p>以新番速览、题材分类与追番推荐为主线，为动漫爱好者提供清晰的找番路径。樱花樱花动漫专注动漫的门户网站不保存任何视频文件，内容仅用于信息整理与导航。</p>
+      </div>
+      <nav aria-label="页尾导航">
+        <a href="#new">新番速览</a>
+        <a href="#cats">题材分类</a>
+        <a href="#rec">追番推荐</a>
+        <a href="#guide">观看指南</a>
+        <a href="#about">关于本站</a>
+      </nav>
+    </div>
+    <div class="copy">
+      <span>© 樱花樱花动漫专注动漫的门户网站 · 内容整理与导航</span>
+      <span>观看请支持正版平台</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var chips = document.querySelectorAll('.chip');
+    var items = document.querySelectorAll('#recList .rec-item');
+    var noResult = document.getElementById('noResult');
+    function apply(kind){
+      var shown = 0;
+      items.forEach(function(it){
+        var match = kind === 'all' || it.getAttribute('data-kind') === kind;
+        it.style.display = match ? '' : 'none';
+        if(match) shown++;
+      });
+      noResult.style.display = shown ? 'none' : 'block';
+    }
+    chips.forEach(function(c){
+      c.addEventListener('click', function(){
+        chips.forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+        c.setAttribute('aria-pressed','true');
+        apply(c.getAttribute('data-filter'));
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
