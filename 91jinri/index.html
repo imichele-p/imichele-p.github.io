@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91今日大乱斗-今日大乱斗入口_乱斗玩法今日更新_91大乱斗专题首页</title>
+<meta name="description" content="91今日大乱斗主题首页，汇总今日大乱斗的玩法要点、每日更新节奏与上手路径，帮助玩家快速了解91今日大乱斗的入口、模式差异与常见问题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M32 12l6 12 13 2-9.5 9 2.3 13L32 42l-11.8 6 2.3-13L13 26l13-2z' fill='%23f5b301'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#141821;
+  --ink-2:#3d4553;
+  --muted:#6b7383;
+  --line:#e3e6ec;
+  --bg:#f6f7f9;
+  --card:#ffffff;
+  --brand:#e8452b;
+  --brand-dark:#b9311c;
+  --gold:#f5b301;
+  --navy:#111827;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* header */
+.site-header{
+  background:var(--navy);
+  color:#fff;
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;height:66px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;white-space:nowrap;}
+.logo .mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(140deg,#f5b301,#e8452b);
+  display:grid;place-items:center;flex:none;
+}
+.logo .mark svg{width:20px;height:20px;}
+.nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.nav a{
+  color:#c9cfdb;font-size:14.5px;padding:7px 11px;border-radius:8px;
+  transition:background .2s,color .2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,255,255,.1);color:#fff;}
+.nav .cta{
+  background:var(--brand);color:#fff;font-weight:700;
+  padding:8px 15px;border-radius:9px;
+}
+.nav .cta:hover{background:var(--brand-dark);}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 85% -10%,rgba(245,179,1,.20),transparent 60%),
+    radial-gradient(700px 340px at 5% 0%,rgba(232,69,43,.22),transparent 60%),
+    var(--navy);
+  color:#fff;
+  padding:56px 0 62px;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1px;color:#ffd88a;
+  background:rgba(245,179,1,.12);border:1px solid rgba(245,179,1,.35);
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+.tagline .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(245,179,1,.2);}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.2;font-weight:850;margin:0 0 16px;letter-spacing:1px;
+}
+h1 .hl{color:var(--gold);}
+.hero p.lead{
+  color:#c3cad8;font-size:16px;margin:0 0 26px;max-width:33em;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:700;padding:12px 22px;border-radius:10px;
+  border:1px solid transparent;cursor:pointer;transition:transform .15s,background .2s;
+}
+.btn:active{transform:translateY(1px);}
+.btn-primary{background:var(--brand);color:#fff;}
+.btn-primary:hover{background:var(--brand-dark);}
+.btn-ghost{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.22);}
+.btn-ghost:hover{background:rgba(255,255,255,.14);}
+.hero-stats{
+  display:flex;gap:26px;margin-top:30px;flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.12);padding-top:20px;
+}
+.hero-stats div b{display:block;font-size:22px;color:#fff;line-height:1.3;}
+.hero-stats div span{font-size:12.5px;color:#9aa4b6;}
+
+/* hero art */
+.hero-art{
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:20px;
+  backdrop-filter:blur(4px);
+}
+.hero-art .art-title{font-size:13px;color:#9aa4b6;letter-spacing:1px;margin-bottom:14px;display:flex;justify-content:space-between;}
+.arena{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);}
+.chip{
+  display:flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:11px 12px;font-size:13.5px;color:#e6eaf2;
+}
+.chip .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;flex:none;background:rgba(245,179,1,.16);color:var(--gold);}
+.chip:nth-child(2n) .ic{background:rgba(232,69,43,.18);color:#ff8a75;}
+
+/* section common */
+section{padding:56px 0;}
+.sec-head{margin-bottom:28px;max-width:44em;}
+.sec-kicker{
+  font-size:12.5px;font-weight:700;letter-spacing:2px;color:var(--brand);
+  text-transform:uppercase;margin-bottom:8px;
+}
+h2{font-size:clamp(21px,2.6vw,28px);margin:0 0 10px;font-weight:800;letter-spacing:.5px;}
+.sec-desc{color:var(--muted);font-size:15px;margin:0;}
+
+/* modes cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(17,24,39,.08);border-color:#cfd5e0;}
+.card .ic{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:#fff2e9;color:var(--brand);margin-bottom:14px;
+}
+.card:nth-child(2) .ic{background:#fff8e0;color:#b88700;}
+.card:nth-child(3) .ic{background:#eef2ff;color:#4256c4;}
+.card h3{font-size:17px;margin:0 0 8px;font-weight:750;}
+.card p{margin:0;font-size:14.5px;color:var(--ink-2);}
+.card .meta{margin-top:12px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;}
+
+/* today board */
+.board{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+.board-top{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:18px 22px;border-bottom:1px solid var(--line);background:#fbfbfd;
+}
+.board-top h3{margin:0;font-size:16.5px;}
+.board-top .date{font-size:13px;color:var(--muted);}
+.board-list{list-style:none;margin:0;padding:6px 0;}
+.board-list li{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:14px 22px;border-bottom:1px solid #f1f3f7;font-size:14.5px;
+}
+.board-list li:last-child{border-bottom:none;}
+.board-list .num{
+  flex:none;width:24px;height:24px;border-radius:7px;background:#fff1ec;color:var(--brand);
+  font-size:12.5px;font-weight:800;display:grid;place-items:center;margin-top:2px;
+}
+.board-list b{font-weight:700;}
+.board-list span.sub{color:var(--muted);}
+
+/* steps + aside */
+.split{display:grid;grid-template-columns:1.4fr .6fr;gap:26px;align-items:start;}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;}
+.steps li{
+  position:relative;padding:0 0 22px 52px;border-left:2px solid var(--line);margin-left:16px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0;}
+.steps li::before{
+  counter-increment:s;content:counter(s);
+  position:absolute;left:-17px;top:0;width:32px;height:32px;border-radius:50%;
+  background:var(--brand);color:#fff;font-weight:800;font-size:14px;
+  display:grid;place-items:center;box-shadow:0 0 0 4px var(--bg);
+}
+.steps h3{margin:0 0 4px;font-size:16px;font-weight:750;}
+.steps p{margin:0;font-size:14.5px;color:var(--ink-2);}
+.aside{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+}
+.aside h3{margin:0 0 12px;font-size:15.5px;}
+.aside ul{list-style:none;margin:0;padding:0;}
+.aside li{font-size:14px;color:var(--ink-2);padding:9px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px;}
+.aside li:last-child{border-bottom:none;}
+.aside li span{color:var(--muted);font-size:12.5px;white-space:nowrap;}
+
+/* faq */
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.faq details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.faq summary{
+  cursor:pointer;font-weight:700;font-size:15px;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--brand);font-size:19px;font-weight:800;line-height:1;}
+.faq details[open] summary::after{content:"–";}
+.faq p{margin:10px 0 0;font-size:14.5px;color:var(--ink-2);}
+
+/* download band */
+.band{
+  background:linear-gradient(120deg,#111827,#1d2a44);
+  color:#fff;border-radius:18px;padding:32px 30px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.band h2{color:#fff;font-size:22px;margin:0 0 6px;}
+.band p{margin:0;color:#b6bfd0;font-size:14.5px;max-width:38em;}
+.btn-disabled{
+  background:rgba(255,255,255,.14);color:#fff;border:1px dashed rgba(255,255,255,.4);
+  pointer-events:none;cursor:default;
+}
+
+/* footer */
+.site-footer{
+  background:#0d1119;color:#8d97a8;padding:34px 0 26px;font-size:13.5px;
+}
+.foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.foot-brand{max-width:34em;}
+.foot-brand .logo{color:#fff;font-size:16px;margin-bottom:10px;}
+.foot-brand p{margin:0;color:#79839a;}
+.foot-nav{display:flex;gap:20px;flex-wrap:wrap;}
+.foot-nav a{color:#a7b0c2;font-size:13.5px;}
+.foot-nav a:hover{color:#fff;}
+.foot-bottom{
+  margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);
+  color:#5f6879;font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;}
+  .faq{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  .header-inner{height:auto;padding:12px 0;flex-direction:column;align-items:flex-start;gap:10px;}
+  .nav{gap:2px;}
+  .nav a{padding:6px 9px;font-size:13.5px;}
+  .hero{padding:38px 0 44px;}
+  section{padding:40px 0;}
+  .cards{grid-template-columns:1fr;}
+  .arena{grid-template-columns:1fr;}
+  .hero-stats{gap:18px;}
+  .hero-stats div b{font-size:19px;}
+  .band{padding:24px 20px;}
+  .board-top{padding:14px 16px;}
+  .board-list li{padding:12px 16px;font-size:14px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="91今日大乱斗首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+          <path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 15.4 6.8 18.1l1-5.8L3.5 8.2l5.9-.9z"/>
+        </svg>
+      </span>
+      <span>91今日大乱斗</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#modes">乱斗模式</a>
+      <a href="#today">今日动态</a>
+      <a href="#start">上手指引</a>
+      <a href="#faq">常见问题</a>
+      <a class="cta" href="#start">立即进入</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline"><span class="dot"></span>每日更新的乱斗主题页</span>
+        <h1 id="hero-title">91今日大乱斗</h1>
+        <p class="lead">
+          91今日大乱斗把“今天玩什么、怎么进场、先练哪个模式”集中在一页。这里按日整理乱斗模式的玩法要点与上手顺序，
+          让你在进入对局前就能清楚今天的节奏，而不是临时摸索。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#today">
+            查看今日动态
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#modes">了解模式差异</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>3 类</b><span>核心乱斗模式</span></div>
+          <div><b>每日</b><span>内容更新节奏</span></div>
+          <div><b>1 页</b><span>集中查阅入口</span></div>
+        </div>
+      </div>
+      <aside class="hero-art" aria-label="页面内容速览">
+        <div class="art-title"><span>今日看点速览</span><span>91今日大乱斗</span></div>
+        <div class="arena">
+          <div class="chip"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></span>快节奏对局</div>
+          <div class="chip"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>单局时长短</div>
+          <div class="chip"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 20V10M9 20V4M15 20v-7M21 20V8"/></svg></span>上手门槛低</div>
+          <div class="chip"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg></span>玩法有变化</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section id="modes" aria-labelledby="modes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">乱斗模式</div>
+        <h2 id="modes-title">先分清三种乱斗玩法</h2>
+        <p class="sec-desc">91今日大乱斗的内容以模式为骨架。不同模式的节奏、容错和配合要求差别明显，按模式了解比逐条记规则更有效。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ic" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
+          </div>
+          <h3>极速乱斗</h3>
+          <p>单局时间被压缩，资源刷新更密集，适合先熟悉角色与出手时机。新手从这里进入，能更快建立对节奏的判断。</p>
+          <div class="meta">适合：初次接触 · 练习手感</div>
+        </article>
+        <article class="card">
+          <div class="ic" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg>
+          </div>
+          <h3>组队对抗</h3>
+          <p>强调阵容搭配与沟通，胜负更多取决于分工是否清楚。页面会提示先确认队伍定位，再决定进攻或防守的取舍。</p>
+          <div class="meta">适合：有固定队友 · 讲配合</div>
+        </article>
+        <article class="card">
+          <div class="ic" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3>限时轮换</h3>
+          <p>随更新周期切换规则，同一模式在不同日子可能有新条件。查阅今日动态再进场，可以避免沿用旧思路。</p>
+          <div class="meta">适合：追求新鲜感 · 关注更新</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section id="today" aria-labelledby="today-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">今日动态</div>
+        <h2 id="today-title">91今日大乱斗的每日看点</h2>
+        <p class="sec-desc">每日板块按固定顺序整理四件事：模式轮换、上手建议、对局节奏与复盘要点。它不替代游戏内公告，而是把当天要关注的内容排好次序。</p>
+      </div>
+      <div class="board">
+        <div class="board-top">
+          <h3>今日条目顺序</h3>
+          <span class="date">建议按序号阅读</span>
+        </div>
+        <ol class="board-list">
+          <li><span class="num">1</span><div><b>模式轮换确认。</b> <span class="sub">先看今天开放哪类乱斗，限时轮换是否改变规则条件，再决定投入时间。</span></div></li>
+          <li><span class="num">2</span><div><b>上手指引对照。</b> <span class="sub">回到上手指引区，按当前模式选择练习重点，避免把组队思路套到极速对局里。</span></div></li>
+          <li><span class="num">3</span><div><b>对局节奏预判。</b> <span class="sub">快节奏模式更看重前段决策，组队模式则要给沟通留出时间，节奏预判直接影响开局选择。</span></div></li>
+          <li><span class="num">4</span><div><b>赛后复盘要点。</b> <span class="sub">记录一次失误点比记比分更有用。91今日大乱斗的复盘建议聚焦可改进的具体动作。</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- START -->
+  <section id="start" aria-labelledby="start-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">上手指引</div>
+        <h2 id="start-title">从进入到打顺，分四步走</h2>
+        <p class="sec-desc">91今日大乱斗面向的访问需求很直接：先知道今天有什么，再知道自己该练什么。下面四步是通用路径，可按熟练度跳读。</p>
+      </div>
+      <div class="split">
+        <ol class="steps">
+          <li>
+            <h3>确认今日模式与规则</h3>
+            <p>进入前先看今日动态的第一条，明确模式类型和是否有临时条件。规则没看清就开局，往往是失误的主要来源。</p>
+          </li>
+          <li>
+            <h3>选一个模式专注练</h3>
+            <p>新手建议从极速乱斗开始，把注意力放在出手时机和资源取舍上；有固定队友再转向组队对抗。</p>
+          </li>
+          <li>
+            <h3>固定一套开局思路</h3>
+            <p>同一模式连续打几局，先固定开局动作，再逐步调整。频繁换打法会让手感判断变得模糊。</p>
+          </li>
+          <li>
+            <h3>赛后记录一个改进点</h3>
+            <p>每局只记一个具体问题，例如某次进攻时机偏早。下一局针对性修正，比笼统复盘更容易见效。</p>
+          </li>
+        </ol>
+        <aside class="aside" aria-label="阅读建议">
+          <h3>阅读与使用建议</h3>
+          <ul>
+            <li>今日模式轮换 <span>每日先看</span></li>
+            <li>模式差异说明 <span>选模式前</span></li>
+            <li>上手指引四步 <span>练习阶段</span></li>
+            <li>常见问题答疑 <span>遇到疑问时</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">常见问题</div>
+        <h2 id="faq-title">关于91今日大乱斗的常见疑问</h2>
+        <p class="sec-desc">以下问题来自访问者最常关心的四个方向，回答只涉及页面能确认的内容，具体规则与开放情况以游戏内信息为准。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>91今日大乱斗主要提供什么内容？</summary>
+          <p>它是一个主题首页，集中呈现乱斗模式的分类说明、每日看点顺序、上手指引与常见问题，帮助访问者快速建立对当天玩法的整体认识。</p>
+        </details>
+        <details>
+          <summary>每天的内容都会变化吗？</summary>
+          <p>页面按日更新的部分集中在“今日动态”。模式分类与上手指引属于相对稳定的内容，限时轮换相关说明则随更新周期调整。</p>
+        </details>
+        <details>
+          <summary>新手应该先看哪一块？</summary>
+          <p>建议先看乱斗模式区，确认三种模式的差异，再从极速乱斗开始练习。熟悉节奏后，再阅读组队对抗与限时轮换的说明。</p>
+        </details>
+        <details>
+          <summary>页面会替代游戏内的规则公告吗？</summary>
+          <p>不会。页面提供的是阅读顺序与实践建议，涉及具体规则条件、开放时间等内容，仍应以游戏内公告为准。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD BAND -->
+  <section aria-labelledby="dl-title" style="padding-top:0;">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2 id="dl-title">把91今日大乱斗的今日要点带走</h2>
+          <p>下载内容用于离线查阅今日模式轮换与上手顺序，便于在进入对局前快速对照。具体规则仍以游戏内信息为准。</p>
+        </div>
+        <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+              <path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 15.4 6.8 18.1l1-5.8L3.5 8.2l5.9-.9z"/>
+            </svg>
+          </span>
+          <span>91今日大乱斗</span>
+        </div>
+        <p>91今日大乱斗是一个围绕每日乱斗玩法整理内容的主题首页，按模式分类、每日看点与上手顺序组织阅读，帮助访问者更快进入对局状态。</p>
+      </div>
+      <nav class="foot-nav" aria-label="页尾导航">
+        <a href="#modes">乱斗模式</a>
+        <a href="#today">今日动态</a>
+        <a href="#start">上手指引</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 91今日大乱斗 · 主题首页</span>
+      <span>内容以游戏内公告为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
